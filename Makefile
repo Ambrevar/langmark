@@ -2,6 +2,9 @@ SHELL = /bin/sh
 .POSIX:
 .SILENT:
 
+TIME ?= /usr/bin/time
+TFLAGS ?= -p
+
 build ?= build
 name ?= fibo
 
@@ -54,6 +57,7 @@ msg = ${exec}${options} ${args}
 all: init ${list}
 
 init:
+	${SHELL} -c 'command -v ${time}' >/dev/null 2>&1 || { echo "${time} not found." >&2; false; }
 	-mkdir ${build} 2>/dev/null
 
 ################################################################################
@@ -208,11 +212,11 @@ tcl:
 ## Execute.
 
 run:
-	-out="$$(/usr/bin/time -p ${exec} ${options} ${file} ${args} 2>&1 >/dev/null)" && \
+	-out="$$(${TIME} ${TFLAGS} ${exec} ${options} ${file} ${args} 2>&1 >/dev/null)" && \
 	echo "$$out" | awk '{print "${msg}\t" $$2 "s"; exit}'
 
 exec:
-	-out="$$(/usr/bin/time -p ${build}/${exec} ${args} 2>&1 >/dev/null)" && \
+	-out="$$(${TIME} ${TFLAGS} ${build}/${exec} ${args} 2>&1 >/dev/null)" && \
 	echo "$$out" | awk '{print "${msg}\t" $$2 "s"; exit}'
 
 ################################################################################

@@ -1,6 +1,6 @@
 # Language Benchmark
 ## Author: P. Neidhardt
-### 2014-09-13
+### 2014-09-19
 
 Description
 ===========
@@ -21,6 +21,37 @@ says anything on the interpreter performance.
 Note there is no average computation, only one run. Poor statistics indeed, but
 we like to keep it simple.
 
+Usage
+=====
+
+List the default languages.
+  $ make list
+
+Run the default tests.
+  $ make
+
+Initialize the benchmark.
+  $ make init
+
+Run specific tests.
+  $ make c lua
+
+Run the tests with a different limit.
+  $ make args=20
+
+Run with different build dir.
+  $ make build=temp
+
+Run with different build dir.
+  $ make build=temp
+
+Change time command and parameters.
+  $ make TIME=/usr/local/bin/time TFLAGS=-p
+
+Clean.
+  $ make clean
+
+The above arguments can be combined when that makes sense.
 
 Resource
 ========
