@@ -53,6 +53,12 @@ Clean.
 
 The above arguments can be combined when that makes sense.
 
+Bugs
+====
+
+We do not check bounds nor argument type. This makes code shorter and more
+identical accross various programming languages.
+
 Resource
 ========
 

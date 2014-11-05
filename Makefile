@@ -18,6 +18,8 @@ chicken \
 chicken-fast \
 cpp \
 cpp-fast \
+d \
+d-fast \
 dash \
 elisp \
 elisp-bc \
@@ -98,6 +100,16 @@ cpp-fast: ${build}/cpp-fast
 	exec=cpp-fast ${MAKE} exec
 ${build}/cpp-fast: ${name}.cpp
 	-g++ -march=native -Ofast ${name}.cpp -o ${build}/cpp-fast
+
+d: ${build}/d
+	exec=d ${MAKE} exec
+${build}/d: ${name}.c
+	-dmd ${name}.d -of${build}/d
+
+d-fast: ${build}/d-fast
+	exec=d-fast ${MAKE} exec
+${build}/d-fast: ${name}.d
+	-dmd -O ${name}.d -of${build}/d-fast
 
 elisp:
 	exec=elisp ext=el ${MAKE} run
