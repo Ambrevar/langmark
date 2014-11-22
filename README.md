@@ -1,6 +1,5 @@
 # Language Benchmark
 ## Author: P. Neidhardt
-### 2014-09-19
 
 Description
 ===========
@@ -25,31 +24,40 @@ Usage
 =====
 
 List the default languages.
-  $ make list
+
+	$ make list
 
 Run the default tests.
-  $ make
+
+	$ make
 
 Initialize the benchmark.
-  $ make init
+
+	$ make init
 
 Run specific tests.
-  $ make c lua
+
+	$ make c lua
 
 Run the tests with a different limit.
-  $ make args=20
+
+	$ make args=20
 
 Run with different build dir.
-  $ make build=temp
+
+	$ make build=temp
 
 Run with different build dir.
-  $ make build=temp
+
+	$ make build=temp
 
 Change time command and parameters.
-  $ make TIME=/usr/local/bin/time TFLAGS=-p
+
+	$ make TIME=/usr/local/bin/time TFLAGS=-p
 
 Clean.
-  $ make clean
+
+	$ make clean
 
 The above arguments can be combined when that makes sense.
 
@@ -62,6 +70,6 @@ identical accross various programming languages.
 Resource
 ========
 
-http://www.scriptol.com/programming/fibonacci.php
-http://rosettacode.org/wiki/Fibonacci_sequence
-http://rosettacode.org/wiki/Command-line_arguments#JavaScript
+* http://www.scriptol.com/programming/fibonacci.php
+* http://rosettacode.org/wiki/Fibonacci_sequence
+* http://rosettacode.org/wiki/Command-line_arguments
