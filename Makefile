@@ -36,6 +36,7 @@ ocaml-bc \
 ocaml-nat \
 pascal \
 pascal-fast \
+php \
 pypy \
 python2 \
 python3 \
@@ -182,6 +183,9 @@ ${build}/pascal-fast: ${name}.pas
 
 perl:
 	exec=perl ext=pl ${MAKE} run
+
+php:
+	exec=php ${MAKE} run
 
 pypy:
 	exec=pypy ext=py ${MAKE} run
