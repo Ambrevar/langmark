@@ -197,12 +197,12 @@ python3:
 rust: ${build}/rust
 	exec=rust ${MAKE} exec
 ${build}/rust: ${name}.rs
-	-rustc --opt-level=0 ${name}.rs -o ${build}/rust
+	-rustc -C opt-level=0 ${name}.rs -o ${build}/rust
 
 rust-fast: ${build}/rust-fast
 	exec=rust-fast ${MAKE} exec
 ${build}/rust-fast: ${name}.rs
-	-rustc --opt-level=3 ${name}.rs -o ${build}/rust-fast
+	-rustc -C opt-level=3 ${name}.rs -o ${build}/rust-fast
 
 chicken: ${build}/chicken
 	exec=chicken ${MAKE} exec
