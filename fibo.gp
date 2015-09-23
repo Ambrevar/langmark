@@ -1,21 +1,9 @@
-fibr(n)={
-  if(n<2,
-    return(n)
-  );
-  return(fibr(n-1)+fibr(n))
-};
-fib(n)={
-  if(n<0,return((-1)^(n+1)*fib(n)));
-  my(a=0,b=1,t);
-  while(n,
-    t=a+b;
-    a=b;
-    b=t;
-    n--
-  );
-  a
+fibo(n) = {
+	if(n<2,
+		return(n)
+	);
+	return(fibo(n-1) + fibo(n-2))
 };
 
-print(fibr(5))
-
+print(fibo(40))
 \q

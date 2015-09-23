@@ -1,9 +1,9 @@
-let rec fib n =
+let rec fibo n =
   if n < 2 then n
-  else fib (n - 2) + fib (n - 1)
+  else fibo (n - 2) + fibo (n - 1)
 
 let _ =
   let n =
     try int_of_string Sys.argv.(1)
     with Invalid_argument _ -> 1 in
-  Printf.printf "%d\n" (fib n)
+  Printf.printf "%d\n" (fibo n)

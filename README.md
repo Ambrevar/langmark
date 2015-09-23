@@ -43,11 +43,7 @@ Run the tests with a different limit.
 
 	$ make args=20
 
-Run with different build dir.
-
-	$ make build=temp
-
-Run with different build dir.
+Build in a different folder.
 
 	$ make build=temp
 

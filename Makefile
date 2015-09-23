@@ -11,6 +11,7 @@ name ?= fibo
 list ?= \
 ada \
 ada-fast \
+awk \
 bash \
 c \
 c-fast \
@@ -20,11 +21,13 @@ cpp \
 cpp-fast \
 d \
 d-fast \
+d8 \
 dash \
 elisp \
 elisp-bc \
 fortran \
 fortran-fast \
+gawk \
 gccgo \
 gccgo-fast \
 go \
@@ -42,8 +45,8 @@ python2 \
 python3 \
 rust \
 rust-fast \
+squirrel \
 tcl \
-v8 \
 zsh
 
 .PHONY: ${list}
@@ -64,7 +67,6 @@ init:
 	-mkdir ${build} 2>/dev/null
 
 ################################################################################
-## Rules.
 ## Rules are sorted by input file extension.
 
 ada: ${build}/ada

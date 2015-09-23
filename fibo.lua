@@ -1,4 +1,4 @@
-function fibo (n)
+function fibo(n)
    if n < 2 then
       return n
    else

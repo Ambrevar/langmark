@@ -3,4 +3,5 @@ function fibo(n) {
         return n
     return fibo(n-2) + fibo(n-1)
 }
+
 fibo(arguments[0])

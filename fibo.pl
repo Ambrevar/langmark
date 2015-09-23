@@ -12,5 +12,5 @@ sub fibo {
     }
 }
 
-print (fibo ($ARGV[0]), "\n");
+print(fibo($ARGV[0]), "\n");
 
