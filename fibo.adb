@@ -1,17 +1,17 @@
 with Ada.Command_Line;
 with Ada.Text_IO; use Ada.Text_IO;
 
-procedure Fibo is
+procedure Fibonacci is
 
-   function fib(n : integer) return integer is
+   function fibo(n : integer) return integer is
    begin
       if n < 2 then
          return n;
       else
-         return fib(n-1) + fib(n-2);
+         return fibo(n-1) + fibo(n-2);
       end if;
-   end fib;
+   end fibo;
 
 begin
-   Put_Line (Integer'Image(fib(integer'Value(Ada.Command_Line.Argument(1)))));
-end Fibo;
+   Put_Line (Integer'Image(fibo(integer'Value(Ada.Command_Line.Argument(1)))));
+end Fibonacci;

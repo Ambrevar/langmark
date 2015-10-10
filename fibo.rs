@@ -2,11 +2,11 @@ use std::env;
 
 fn main() {
 
-	fn fib(n: i32) -> i32 {
+	fn fibo(n: i32) -> i32 {
 		if n < 2 {
 			n
 		} else {
-			fib(n-1) + fib(n-2)
+			fibo(n-1) + fibo(n-2)
 		}
 	}
 
@@ -17,5 +17,5 @@ fn main() {
 		_ => args[1].parse().unwrap_or(default_n)
 	};
 
-	println!("{}", fib(n));
+	println!("{}", fibo(n));
 }

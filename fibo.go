@@ -1,16 +1,20 @@
 package main
 
-import ("fmt"; "os"; "strconv")
+import (
+	"fmt"
+	"os"
+	"strconv"
+)
 
-func fibonacci(n int) int {
+func fibo(n int) int {
 	if n < 2 {
-       return n
+		return n
 	} else {
-        return fibonacci(n-2) + fibonacci(n-1)
+		return fibo(n-2) + fibo(n-1)
 	}
 }
 
 func main() {
-	var n, _ = strconv.Atoi (os.Args[1])
-	fmt.Println (fibonacci (n))
+	var n, _ = strconv.Atoi(os.Args[1])
+	fmt.Println(fibo(n))
 }

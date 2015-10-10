@@ -1,11 +1,11 @@
-program fibo;
+program fibonacci;
 var
    num: integer;
 
-function fib(n : integer) : longint;
+function fibo(n : integer) : longint;
 begin
-   if n < 2 then fib := n
-   else fib := fib (n-2) + fib (n-1);
+   if n < 2 then fibo := n
+   else fibo := fibo (n-2) + fibo (n-1);
 end;
 
 begin
@@ -18,7 +18,7 @@ begin
       val (ParamStr (1), num);
    end;
    begin
-      writeln (fib(num));
+      writeln (fibo(num));
    end
 
 end.
