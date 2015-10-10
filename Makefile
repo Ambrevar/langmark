@@ -32,6 +32,7 @@ gccgo \
 gccgo-fast \
 go \
 js17 \
+julia \
 lua \
 luajit \
 ocaml \
@@ -153,6 +154,9 @@ js17:
 ## TODO: js24 is not working with current code.
 # js24:
 # 	exec=js24 ext=js ${MAKE} run
+
+julia:
+	exec=julia ext=jl ${MAKE} run
 
 lua:
 	exec=lua ${MAKE} run
