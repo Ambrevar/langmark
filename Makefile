@@ -44,6 +44,7 @@ php \
 pypy \
 python2 \
 python3 \
+rc \
 rust \
 rust-fast \
 squirrel \
@@ -53,7 +54,7 @@ zsh
 .PHONY: ${list}
 
 ext ?= ${exec}
-file ?= ${name}.${ext}
+file ?= ./${name}.${ext}
 args ?= 40
 msg = ${exec}${options} ${args}
 
@@ -226,6 +227,8 @@ bash:
 	exec=bash ext=sh args=20 ${MAKE} run
 zsh:
 	exec=zsh ext=sh args=20 ${MAKE} run
+rc:
+	exec=rc ext=rc args=20 ${MAKE} run
 
 tcl:
 	exec=tclsh ext=tcl ${MAKE} run

@@ -1,0 +1,12 @@
+#!/usr/bin/env rc
+
+fn fibo {
+	if (test $1 -lt 2 ) {
+		echo $1
+	}
+	if not {
+		echo `{expr `{fibo `{expr $1 - 1}} + `{fibo `{expr $1 - 2}}}
+	}
+}
+
+fibo $1
