@@ -25,6 +25,7 @@ d8 \
 dash \
 elisp \
 elisp-bc \
+fish \
 fortran \
 fortran-fast \
 gawk \
@@ -228,7 +229,9 @@ bash:
 zsh:
 	exec=zsh ext=sh args=20 ${MAKE} run
 rc:
-	exec=rc ext=rc args=20 ${MAKE} run
+	exec=rc args=20 ${MAKE} run
+fish:
+	exec=fish args=20 ${MAKE} run
 
 tcl:
 	exec=tclsh ext=tcl ${MAKE} run
