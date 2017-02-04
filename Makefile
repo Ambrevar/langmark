@@ -25,6 +25,7 @@ d8 \
 dash \
 elisp \
 elisp-bc \
+elixir \
 fish \
 fortran \
 fortran-fast \
@@ -121,6 +122,9 @@ elisp:
 	exec=elisp ext=el ${MAKE} run
 elisp-bc:
 	exec=elisp options=-bc ext=el ${MAKE} run
+
+elixir:
+	exec=elixir ext=ex ${MAKE} run
 
 fortran: ${build}/fortran
 	exec=fortran ${MAKE} exec
