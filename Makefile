@@ -33,6 +33,7 @@ gawk \
 gccgo \
 gccgo-fast \
 go \
+guile \
 js17 \
 julia \
 lua \
@@ -152,6 +153,9 @@ gccgo-fast: ${build}/gccgo-fast
 	exec=gccgo-fast ${MAKE} exec
 ${build}/gccgo-fast: ${name}.go
 	-gccgo -g -march=native -Ofast ${name}.go -o ${build}/gccgo-fast
+
+guile:
+	exec=guile ${MAKE} run
 
 d8:
 	exec=d8 ext=js ${MAKE} run
