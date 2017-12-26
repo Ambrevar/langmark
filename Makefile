@@ -50,6 +50,7 @@ python2 \
 python3 \
 racket \
 rc \
+ruby \
 rust \
 rust-fast \
 sbcl \
@@ -219,6 +220,9 @@ python3:
 
 racket:
 	exec=racket ext=rkt ${MAKE} run
+
+ruby:
+	exec=ruby ext=rb ${MAKE} run
 
 rust: ${build}/rust
 	exec=rust ${MAKE} exec
