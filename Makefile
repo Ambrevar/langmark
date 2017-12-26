@@ -17,6 +17,7 @@ c \
 c-fast \
 chicken \
 chicken-fast \
+clisp \
 cpp \
 cpp-fast \
 d \
@@ -51,6 +52,7 @@ racket \
 rc \
 rust \
 rust-fast \
+sbcl \
 squirrel \
 tcl \
 zsh
@@ -68,6 +70,7 @@ msg = ${exec}${options} ${args}
 .PHONY: all
 all: init ${list}
 
+.PHONY: init
 init:
 	${SHELL} -c 'command -v ${time}' >/dev/null 2>&1 || { echo "${time} not found." >&2; false; }
 	-mkdir ${build} 2>/dev/null
@@ -99,6 +102,9 @@ c-fast: ${build}/c-fast
 	exec=c-fast ${MAKE} exec
 ${build}/c-fast: ${name}.c
 	-gcc -march=native -Ofast ${name}.c -o ${build}/c-fast
+
+clisp:
+	exec=clisp ext=cl ${MAKE} run
 
 cpp: ${build}/cpp
 	exec=cpp ${MAKE} exec
@@ -233,6 +239,9 @@ chicken-fast: ${build}/chicken-fast
 	exec=chicken-fast ${MAKE} exec
 ${build}/chicken-fast: ${name}.scm
 	-csc -O5 ${name}.scm -o ${build}/chicken-fast
+
+sbcl:
+	exec=sbcl options=--script ${MAKE} run
 
 dash:
 	exec=dash ext=sh args=20 ${MAKE} run
