@@ -47,6 +47,7 @@ php \
 pypy \
 python2 \
 python3 \
+racket \
 rc \
 rust \
 rust-fast \
@@ -209,6 +210,9 @@ python2:
 	exec=python ext=py ${MAKE} run
 python3:
 	exec=python3 ext=py ${MAKE} run
+
+racket:
+	exec=racket ext=rkt ${MAKE} run
 
 rust: ${build}/rust
 	exec=rust ${MAKE} exec
