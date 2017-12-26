@@ -35,6 +35,8 @@ gccgo \
 gccgo-fast \
 go \
 guile \
+haskell \
+haskell-fast \
 js17 \
 julia \
 lua \
@@ -164,6 +166,16 @@ ${build}/gccgo-fast: ${name}.go
 
 guile:
 	exec=guile ${MAKE} run
+
+haskell: ${build}/haskell
+	exec=haskell ${MAKE} exec
+${build}/haskell: ${name}.hs
+	-ghc -dynamic -O0 ${name}.hs -o ${build}/haskell
+
+haskell-fast: ${build}/haskell-fast
+	exec=haskell-fast ${MAKE} exec
+${build}/haskell-fast: ${name}.hs
+	-ghc -dynamic -O2 ${name}.hs -o ${build}/haskell-fast
 
 d8:
 	exec=d8 ext=js ${MAKE} run
