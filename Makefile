@@ -27,6 +27,7 @@ dash \
 elisp \
 elisp-bc \
 elixir \
+erlang \
 fish \
 fortran \
 fortran-fast \
@@ -136,6 +137,12 @@ elisp-bc:
 
 elixir:
 	exec=elixir ext=ex ${MAKE} run
+
+erlang: ${build}/erlang.beam
+	-out="$$(cd build && ${TIME} ${TFLAGS} erl -noshell -s fibo start -s init stop 2>&1 >/dev/null)" && \
+	echo "$$out" | awk '{print "${msg}\t" $$2 "s"; exit}'
+${build}/erlang.beam: ${name}.erl
+	-erlc -o ${build} ${name}.erl
 
 fortran: ${build}/fortran
 	exec=fortran ${MAKE} exec
