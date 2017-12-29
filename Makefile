@@ -57,6 +57,7 @@ ruby \
 rust \
 rust-fast \
 sbcl \
+sml \
 squirrel \
 tcl \
 zsh
@@ -265,6 +266,11 @@ ${build}/chicken-fast: ${name}.scm
 
 sbcl:
 	exec=sbcl options=--script ${MAKE} run
+
+sml: ${build}/sml
+	exec=sml ${MAKE} exec
+${build}/sml: ${name}.sml
+	-mlton -output ${build}/sml ${name}.sml
 
 dash:
 	exec=dash ext=sh args=20 ${MAKE} run
