@@ -1,8 +1,6 @@
 # Language Benchmark
-## Author: P. Neidhardt
 
-Description
-===========
+## Description
 
 As for every other benchmark, one important thing to keep in mind is that the
 results depend on *what* you measure, it is not an absolute ranking of
@@ -20,8 +18,7 @@ says anything on the interpreter performance.
 Note there is no average computation, only one run. Poor statistics indeed, but
 we like to keep it simple.
 
-Usage
-=====
+## Usage
 
 List the default languages.
 
@@ -57,15 +54,13 @@ Clean.
 
 The above arguments can be combined when that makes sense.
 
-Bugs
-====
+## Bugs
 
 We do not check bounds nor argument type. This makes code shorter and more
 identical accross various programming languages.
 
-Resource
-========
+## Resource
 
-* http://www.scriptol.com/programming/fibonacci.php
-* http://rosettacode.org/wiki/Fibonacci_sequence
-* http://rosettacode.org/wiki/Command-line_arguments
+- http://www.scriptol.com/programming/fibonacci.php
+- http://rosettacode.org/wiki/Fibonacci_sequence
+- http://rosettacode.org/wiki/Command-line_arguments
