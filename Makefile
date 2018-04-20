@@ -15,6 +15,8 @@ awk \
 bash \
 c \
 c-fast \
+chez \
+chez-fast \
 chicken \
 chicken-fast \
 clisp \
@@ -253,6 +255,11 @@ rust-fast: ${build}/rust-fast
 	exec=rust-fast ${MAKE} exec
 ${build}/rust-fast: ${name}.rs
 	-rustc -C opt-level=3 ${name}.rs -o ${build}/rust-fast
+
+chez:
+	exec=chez-scheme ext=chez options=--script ${MAKE} run
+chez-fast:
+	exec=chez-scheme ext=chez options="--optimize-level 3 --script" ${MAKE} run
 
 chicken: ${build}/chicken
 	exec=chicken ${MAKE} exec
