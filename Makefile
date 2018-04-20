@@ -2,7 +2,7 @@ SHELL = /bin/sh
 .POSIX:
 .SILENT:
 
-TIME ?= /usr/bin/time
+TIME ?= $$(which time)
 TFLAGS ?= -p
 
 build ?= build
